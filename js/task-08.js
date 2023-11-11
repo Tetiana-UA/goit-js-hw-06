@@ -5,3 +5,18 @@
 //   Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const form = document.querySelector(".login-form");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const { email, password } = event.currentTarget.elements;
+
+  const feedback = {
+    email: email.value,
+    password: password.value,
+  };
+  console.log(feedback);
+  event.currentTarget.reset();
+}
