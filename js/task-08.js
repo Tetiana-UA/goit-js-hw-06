@@ -11,12 +11,18 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
-  const { email, password } = event.currentTarget.elements;
+  const email = form.elements.email;
+  const password = form.elements.password;
 
-  const feedback = {
-    email: email.value,
-    password: password.value,
-  };
-  console.log(feedback);
-  event.currentTarget.reset();
+  if (email.value === "" || password.value === "") {
+    alert("Усі поля повинні бути заповнені");
+  } else {
+    const feedback = {
+      email: email.value,
+      password: password.value,
+    };
+
+    console.log(feedback);
+  }
+  form.reset();
 }
