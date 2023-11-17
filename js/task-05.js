@@ -6,7 +6,7 @@ const spanEl = document.querySelector("#name-output");
 inputEl.addEventListener("input", hangleInput);
 
 function hangleInput(event) {
-  spanEl.textContent = inputEl.value || "Anonymous";
+  spanEl.textContent = inputEl.value.trim() || "Anonymous";
   //if (inputEl.value === null) {
   //  spanEl.textContent = "Anonymous";
   //}
